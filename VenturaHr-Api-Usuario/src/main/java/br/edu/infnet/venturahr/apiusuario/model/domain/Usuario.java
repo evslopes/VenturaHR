@@ -8,9 +8,23 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
+    @Column(length = 50)
     private String nome;
+    @Column(length = 100)
+    private String endereco;
+    @Column(length = 20)
+    private String telefone;
+    @Column(length = 30)
     private String email;
+    @Column(length = 32)
     private String senha;
+    @Column(length = 11)
+    private String cpf;
+    @Column(length = 50)
+    private String razao_social;
+    @Column(length = 14)
+    private String cnpj;
+    private char tipo;
 
     public Usuario(){
 
@@ -32,6 +46,22 @@ public class Usuario {
         this.nome = nome;
     }
 
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -46,5 +76,37 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getRazao_social() {
+        return razao_social;
+    }
+
+    public void setRazao_social(String razao_social) {
+        this.razao_social = razao_social;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public char getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(char tipo) {
+        this.tipo = tipo;
     }
 }
