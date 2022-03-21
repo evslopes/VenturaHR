@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="VenturaHr-ClienteWeb" />
+        <module name="VenturaHr-Api-Candidato" />
+        <module name="VenturaHr-Api-Empresa" />
+        <module name="VenturaHr-Api-Usuario" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="VenturaHr-Api-Candidato" target="11" />
+      <module name="VenturaHr-Api-Empresa" target="11" />
+      <module name="VenturaHr-Api-Usuario" target="11" />
+      <module name="VenturaHr-ClienteWeb" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="VenturaHr-Api-Candidato" options="-parameters" />
+      <module name="VenturaHr-Api-Empresa" options="-parameters" />
+      <module name="VenturaHr-Api-Usuario" options="-parameters" />
+      <module name="VenturaHr-ClienteWeb" options="-parameters" />
+    </option>
+  </component>
+</project>
