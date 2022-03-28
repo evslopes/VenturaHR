@@ -28,4 +28,14 @@ public class UsuarioController {
         return resposta;
     }
 
+    @PostMapping(value = "/usuario/excluir")
+    public ResponseEntity excluir(@RequestBody Usuario usuario){
+        ResponseEntity resposta = ResponseEntity.notFound().build();
+        if (usuario != null && usuario.getId() == null){
+            Usuario registrado = usuarioService.incluir(usuario);
+            resposta = ResponseEntity.status(HttpStatus.CREATED).body(registrado);
+        }
+        return resposta;
+    }
+
 }
