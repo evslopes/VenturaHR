@@ -1,6 +1,6 @@
-package br.infnet.edu.venturahr.web.service;
+package br.edu.infnet.web.model.service;
 
-import br.infnet.edu.venturahr.web.domain.Vaga;
+import br.edu.infnet.web.model.domain.Vaga;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
