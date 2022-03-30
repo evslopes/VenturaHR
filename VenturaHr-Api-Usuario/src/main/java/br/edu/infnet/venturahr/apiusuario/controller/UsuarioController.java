@@ -1,7 +1,6 @@
 package br.edu.infnet.venturahr.apiusuario.controller;
 
 import br.edu.infnet.venturahr.apiusuario.model.domain.Usuario;
-import br.edu.infnet.venturahr.apiusuario.model.repository.UsuarioRepository;
 import br.edu.infnet.venturahr.apiusuario.model.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
