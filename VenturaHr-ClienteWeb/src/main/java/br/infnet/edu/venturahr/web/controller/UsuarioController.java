@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class UsuarioController {
 
@@ -31,6 +33,16 @@ public class UsuarioController {
             inbox = "redirect:/acesso";
         }
         return inbox;
+    }
+
+    @PostMapping(value = "/usuarios")
+    public List<Usuario> buscarUsuarios(Model model) {
+
+        List<Usuario> usuarios = usuarioService.ListarUsuarios();
+
+        model.addAttribute("listaUsuarios", usuarios);
+
+        return usuarios;
     }
 
 

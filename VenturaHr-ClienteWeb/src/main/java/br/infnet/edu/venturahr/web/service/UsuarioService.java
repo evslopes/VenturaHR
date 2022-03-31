@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @FeignClient(url="http://localhost:8081/usuarios",name="usuarioService")
 public interface UsuarioService {
 
@@ -17,4 +19,7 @@ public interface UsuarioService {
 
     @PostMapping
     Usuario criarUsuario(Usuario usuario);
+
+    @GetMapping(value = "/")
+    List<Usuario> ListarUsuarios();
 }
