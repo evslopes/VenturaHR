@@ -6,7 +6,7 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
             <c:if test="${empty usuario}">
-                <li><a href="/usuario"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="/usuario"><span class="glyphicon glyphicon-user"></span> Cadastra-se</a></li>
                 <li><a href="/acesso"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </c:if>
 

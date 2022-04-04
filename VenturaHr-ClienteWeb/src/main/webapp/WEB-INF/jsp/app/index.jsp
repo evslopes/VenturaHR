@@ -19,6 +19,7 @@
         <div class="page-header">
             <div style="background-color:LightGray">
                 <h1 class="text-center" style="color:darkblue">Sistema de Recursos Humanos 2.0</h1>
+                <p class="text-center">Acesse as últimas vagas ou faça login para mais recursos.</p>
             </div>
         </div>
 
@@ -46,70 +47,70 @@
                 <td>Lorem ipsum dolor sit amet, consectetuer
                     adipiscing elit.</td>
                 <td>Rio de Janeiro</td>
-                <td width="21%"><font size="2"><a href="a"><span class="material-icons">remove_red_eye</span></a></font>
+                <td><button type="button" class="btn btn-link">Link</button></td>
             </tr>
             <tr>
                 <th scope="row">Analista JEE</th>
                 <td>Lorem ipsum dolor sit amet, consectetuer
                     adipiscing elit.</td>
                 <td>Rio de Janeiro</td>
-                <td width="21%"><font size="2"><a href="a"><span class="material-icons">remove_red_eye</span></a></font>
+                <td><button type="button" class="btn btn-link">Link</button></td>
             </tr>
             <tr>
                 <th scope="row">Analista JEE</th>
                 <td>Lorem ipsum dolor sit amet, consectetuer
                     adipiscing elit.</td>
                 <td>Rio de Janeiro</td>
-                <td width="21%"><font size="2"><a href="a"><span class="material-icons">remove_red_eye</span></a></font>
+                <td><button type="button" class="btn btn-link">Link</button></td>
             </tr>
             <tr>
                 <th scope="row">Analista JEE</th>
                 <td>Lorem ipsum dolor sit amet, consectetuer
                     adipiscing elit.</td>
                 <td>Rio de Janeiro</td>
-                <td width="21%"><font size="2"><a href="a"><span class="material-icons">remove_red_eye</span></a></font>
+                <td><button type="button" class="btn btn-link">Link</button></td>
             </tr>
             <tr>
                 <th scope="row">Analista JEE</th>
                 <td>Lorem ipsum dolor sit amet, consectetuer
                     adipiscing elit.</td>
                 <td>Rio de Janeiro</td>
-                <td width="21%"><font size="2"><a href="a"><span class="material-icons">remove_red_eye</span></a></font>
+                <td><button type="button" class="btn btn-link">Link</button></td>
             </tr>
             <tr>
                 <th scope="row">Analista JEE</th>
                 <td>Lorem ipsum dolor sit amet, consectetuer
                     adipiscing elit.</td>
                 <td>Rio de Janeiro</td>
-                <td width="21%"><font size="2"><a href="a"><span class="material-icons">remove_red_eye</span></a></font>
+                <td><button type="button" class="btn btn-link">Link</button></td>
             </tr>
             <tr>
                 <th scope="row">Analista JEE</th>
                 <td>Lorem ipsum dolor sit amet, consectetuer
                     adipiscing elit.</td>
                 <td>Rio de Janeiro</td>
-                <td width="21%"><font size="2"><a href="a"><span class="material-icons">remove_red_eye</span></a></font>
+                <td><button type="button" class="btn btn-link">Link</button></td>
             </tr>
             <tr>
                 <th scope="row">Analista JEE</th>
                 <td>Lorem ipsum dolor sit amet, consectetuer
                     adipiscing elit.</td>
                 <td>Rio de Janeiro</td>
-                <td width="21%"><font size="2"><a href="a"><span class="material-icons">remove_red_eye</span></a></font>
+                <td><button type="button" class="btn btn-link">Link</button></td>
             </tr>
             <tr>
                 <th scope="row">Analista JEE</th>
                 <td>Lorem ipsum dolor sit amet, consectetuer
                     adipiscing elit.</td>
                 <td>Rio de Janeiro</td>
-                <td width="21%"><font size="2"><a href="a"><span class="material-icons">remove_red_eye</span></a></font>
+                <td><button type="button" class="btn btn-link">Link</button></td>
             </tr>
             <tr>
                 <th scope="row">Analista JEE</th>
                 <td>Lorem ipsum dolor sit amet, consectetuer
                     adipiscing elit.</td>
                 <td>Rio de Janeiro</td>
-                <td width="21%"><font size="2"><a href="a"><span class="material-icons">remove_red_eye</span></a></font>
+                <td><button type="button" class="btn btn-link">Link</button></td>
             </tr>
             </tbody>
         </table>
