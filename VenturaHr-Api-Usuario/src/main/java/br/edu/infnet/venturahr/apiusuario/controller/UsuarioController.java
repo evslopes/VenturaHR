@@ -5,6 +5,7 @@ import br.edu.infnet.venturahr.apiusuario.model.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,18 +21,6 @@ public class UsuarioController {
         Usuario resposta = null;
         try{
             resposta = usuarioRepository.findById(id).get();
-
-        } catch(Exception e){
-
-        }
-        return resposta;
-
-    }
-
-    public List<Usuario> buscarTodos(){
-        List<Usuario> resposta = null;
-        try{
-            resposta = usuarioRepository.findAll();
 
         } catch(Exception e){
 
@@ -69,20 +58,28 @@ public class UsuarioController {
     public ResponseEntity cadastrarUsuario(@RequestBody Usuario usuario){
         ResponseEntity resposta = ResponseEntity.notFound().build();
         if (usuario != null && usuario.getId() == null){
-            Usuario registrado = usuarioRepository.save(usuario);
-            resposta = ResponseEntity.status(HttpStatus.CREATED).body(registrado);
+            Usuario usuarioCadastrado = usuarioRepository.save(usuario);
+            resposta = ResponseEntity.status(HttpStatus.CREATED).body(usuarioCadastrado);
         }
         return resposta;
     }
 
-    @GetMapping(path = {"/usuarios/listar"})
-    public ResponseEntity listarUsuarios(){
-        ResponseEntity resposta = ResponseEntity.notFound().build();
-        List<Usuario> usuarios = this.buscarTodos();
-        if (usuarios != null){
-            resposta = ResponseEntity.ok().body(usuarios);
+    @PatchMapping("/alterar")
+    public ResponseEntity alterarUsuario (@RequestBody Usuario usuario){
+        ResponseEntity retorno = ResponseEntity.badRequest().build();
+
+        if(usuario != null && usuario.getId()!=null){
+            Usuario usuarioGravado = usuarioRepository.findById(usuario.getId()).get();
+
+            if(usuarioGravado != null){
+                try {
+                    usuarioGravado = usuarioRepository.save(usuario);
+                    retorno = ResponseEntity.ok().body(usuarioGravado);
+                } catch (Exception e) {
+                }
+            }
 
         }
-        return resposta;
+        return retorno;
     }
 }

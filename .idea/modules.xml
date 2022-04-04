@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ProjetoBlocoJava.iml" filepath="$PROJECT_DIR$/.idea/ProjetoBlocoJava.iml" />
-      <module fileurl="file://$PROJECT_DIR$/VenturaHr-Api-Candidato/VenturaHr-Api-Candidato.iml" filepath="$PROJECT_DIR$/VenturaHr-Api-Candidato/VenturaHr-Api-Candidato.iml" />
       <module fileurl="file://$PROJECT_DIR$/VenturaHr-Api-Empresa/VenturaHr-Api-Empresa.iml" filepath="$PROJECT_DIR$/VenturaHr-Api-Empresa/VenturaHr-Api-Empresa.iml" />
       <module fileurl="file://$PROJECT_DIR$/VenturaHr-Api-Usuario/VenturaHr-Api-Usuario.iml" filepath="$PROJECT_DIR$/VenturaHr-Api-Usuario/VenturaHr-Api-Usuario.iml" />
       <module fileurl="file://$PROJECT_DIR$/VenturaHr-ClienteWeb/VenturaHr-ClienteWeb.iml" filepath="$PROJECT_DIR$/VenturaHr-ClienteWeb/VenturaHr-ClienteWeb.iml" />

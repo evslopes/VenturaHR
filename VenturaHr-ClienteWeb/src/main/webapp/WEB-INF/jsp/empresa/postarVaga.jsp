@@ -12,12 +12,15 @@
 </head>
 <body>
 
-<c:import url="/WEB-INF/jsp/app/menu.jsp"/>
 <div class="container">
-    <div class="page-header">
-        <div style="background-color:DimGray">
-            <h1 style="color:white">Ventura HR</h1>
-            <h2>Publica Vaga</h2>
+    <div class="container-md">
+        <div class="page-header">
+            <div style="background-color:LightGray">
+                <h1 class="text-center" style="color:darkblue">Sistema de Recursos Humanos 2.0</h1>
+                <p class="text-center">Publicando nova vaga</p>
+            </div>
+        </div>
+        <div>
             <form action="/empresa/vaga" method="post">
                 <div class="form-group">
                     <input type="hidden" class="form-control" name="usuarioId" value=${usuario.id}>
@@ -38,7 +41,7 @@
             </form>
 
             <c:if test="${not empty vaga}">
-                <hr>
+                <h4 class="text-center" style="color:darkblue">Favor informar os cristérios da vaga</h4>
                 <form action="/empresa/criterios" method="post">
                     <div class="form-group">
                         <label>Descrição:</label>
@@ -60,6 +63,12 @@
                 </form>
             </c:if>
         </div>
-
+    </div>
+</div>
 </body>
+
+<footer class="footer navbar-fixed-bottom">
+    <c:import url="/WEB-INF/jsp/app/footer.jsp"/>
+</footer>
+
 </html>

@@ -21,6 +21,7 @@ public class UsuarioController {
         return "/app/cadastro";
     }
 
+    // TODO: 01/04/2022 Refatorar para trabalhar com modelView
     @PostMapping(value = "/usuario/cadastro")
     public String criarUsuario(Model model, Usuario usuario) {
         usuarioService.criarUsuario(usuario);
@@ -28,21 +29,12 @@ public class UsuarioController {
 
         String inbox = null;
 
-        if (usuario.getTipo() == Usuario.ADMINISTRADOR || usuario.getTipo() == Usuario.CANDIDATO ||
+        if (usuario.getTipo() == Usuario.ADMINISTRADOR ||
+                usuario.getTipo() == Usuario.CANDIDATO ||
                 usuario.getTipo() == Usuario.EMPRESA) {
             inbox = "redirect:/acesso";
         }
         return inbox;
-    }
-
-    @PostMapping(value = "/usuarios")
-    public List<Usuario> buscarUsuarios(Model model) {
-
-        List<Usuario> usuarios = usuarioService.ListarUsuarios();
-
-        model.addAttribute("listaUsuarios", usuarios);
-
-        return usuarios;
     }
 
 

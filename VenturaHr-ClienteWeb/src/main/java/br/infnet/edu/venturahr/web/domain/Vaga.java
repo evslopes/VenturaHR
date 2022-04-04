@@ -61,4 +61,14 @@ public class Vaga {
     public void setCriterioList(List<Criterio> criterioList) {
         CriterioList = criterioList;
     }
+
+    @Override
+    public String toString() {
+        return "Vaga{" +
+                "id=" + id +
+                ", cargo='" + cargo + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", tipoDeContrato='" + tipoDeContrato + '\'' +
+                '}';
+    }
 }

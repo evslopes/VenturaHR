@@ -18,6 +18,14 @@
     <div class="container-md">
         <div class="page-header">
             <div style="background-color:LightGray">
+                <h1 class="text-center" style="color:darkblue">Sistema de Recursos Humanos 2.0</h1>
+            </div>
+        </div>
+
+<div class="container mx-center" style="width: 400px">
+    <div class="container-md">
+        <div class="page-header">
+            <div style="background-color:LightGray">
                 <h2 style="color:darkblue">Cadastro</h2>
             </div>
         </div>
@@ -44,8 +52,8 @@
                 <input type="password" class="form-control" placeholder="Entre com uma senha..." name="senha">
             </div>
             <div class="form-group">
-                <label>Nome Completo:</label>
-                <input type="text" class="form-control" placeholder="Entre com o seu nome completo..." name="nomeCompleto">
+                <label>Nome:</label>
+                <input type="text" class="form-control" placeholder="Entre com o seu nome completo..." name="nome">
             </div>
             <div class="form-group">
                 <label>Telefone:</label>

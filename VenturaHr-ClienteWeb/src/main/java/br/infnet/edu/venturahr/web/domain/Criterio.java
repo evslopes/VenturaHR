@@ -40,4 +40,13 @@ public class Criterio {
     public void setPeso(int peso) {
         this.peso = peso;
     }
+
+    @Override
+    public String toString() {
+        return "Criterio{" +
+                "descrição='" + descrição + '\'' +
+                ", perfil=" + perfil +
+                ", peso=" + peso +
+                '}';
+    }
 }

@@ -7,10 +7,7 @@ import br.infnet.edu.venturahr.web.service.VagaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
 import javax.servlet.http.HttpSession;
@@ -26,6 +23,18 @@ public class AcessoController {
     @Autowired
     private VagaService vagaService;
 
+    @GetMapping(value = "/")
+    public String homePage() {
+
+        return "/app/index";
+
+    }
+
+    @GetMapping(value = "/acesso")
+    public String formLogin() {
+
+        return "/app/login";
+    }
 
     @PostMapping(value = "/acesso/login")
     public String login(Model model, @RequestParam String email, @RequestParam String senha) {
@@ -57,12 +66,48 @@ public class AcessoController {
         return "/acesso/login";
     }
 
-    @GetMapping(value = "/acesso")
-    public String formLogin() {
+    @GetMapping(value="/home")
+    public String telaVagas(@SessionAttribute("usuario") Usuario usuario, Model model){
+        try{
+            List<Vaga> vagas = vagaService.listarVagas();
+            model.addAttribute("vagas", vagas);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
 
-        return "/app/login";
+        String destino = "";
+
+        switch (usuario.getTipo()){
+            case 'A':
+                destino = "/candidato/home";
+                break;
+            case 'C':
+                destino = "/candidato/home";
+
+                try{
+                    List<Vaga> vagasUser = vagaService.listarVagaPorUsuarioId(usuario.getId());
+                    model.addAttribute("vagasUser", vagasUser);
+                }catch(Exception e){
+                    System.out.println(e.getMessage());
+                }
+
+                break;
+            case 'E':
+                destino = "/empresa/home";
+
+                try{
+                    List<Vaga> vagasUser = vagaService.listarVagaPorUsuarioId(usuario.getId());
+                    model.addAttribute("vagasUser", vagasUser);
+                }catch(Exception e){
+                    System.out.println(e.getMessage());
+                }
+
+                break;
+        }
+
+        return destino;
+
     }
-
 
     @GetMapping(value = "/logout")
     public String logout(HttpSession session, SessionStatus status) {
@@ -73,10 +118,6 @@ public class AcessoController {
         return "redirect:/acesso";
     }
 
-    @GetMapping(value = "/")
-    public String homePage() {
 
-        return "/app/index";
 
-    }
 }

@@ -11,12 +11,12 @@ import java.util.List;
 @FeignClient(url = "http://localhost:8082/vagas", name = "vagaService")
 public interface VagaService {
 
-    @GetMapping(value = "/usuario/{usuarioId}")
-    List<Vaga> listarVagaPorUsuarioId(@PathVariable Integer usuarioId);
-
     @PostMapping
     Vaga publicarVaga(Vaga vaga);
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "/usuario/{usuarioId}")
+    List<Vaga> listarVagaPorUsuarioId(@PathVariable Integer usuarioId);
+
+    @GetMapping(value = "/listar")
     List<Vaga> listarVagas();
 }

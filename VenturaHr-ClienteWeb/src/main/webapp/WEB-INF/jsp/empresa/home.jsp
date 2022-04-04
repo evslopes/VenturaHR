@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>HrVentura</title>
     <meta charset="utf-8">
@@ -16,18 +16,55 @@
 <c:import url="/WEB-INF/jsp/app/menu.jsp"/>
 
 <div class="container">
-    <div class="page-header">
-        <div style="background-color:DimGray">
-            <h1 style="color:white">Ventura HR</h1>
-            <p>Bem-vindo ${usuario.razaoSocial}</p>
+    <div class="container-md">
+        <div class="page-header">
+            <div style="background-color:LightGray">
+                <h1 class="text-center" style="color:darkblue">Sistema de Recursos Humanos 2.0</h1>
+                <p class="text-center">Seja bem vindo ${usuario.razaoSocial}</p>
+            </div>
         </div>
-        <div class="form-group">
+
+
+        <div class="form-group d-grid gap-1">
             <form action="/postarVaga" method="get">
-                <button type="submit" class="btn btn-default">Criar Vaga</button>
+                <button type="submit" class="btn btn-lg btn-outline-primary">Criar Vaga</button>
             </form>
         </div>
     </div>
-    <hr>
+
+    <c:if test="${not empty vagas}">
+    <table class="table table-sm table-borderless">
+        <thead>
+        <tr>
+            <th scope="col">Lista de Vagas</th>
+        </tr>
+        </thead>
+        <tbody>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Cargo</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Tipo de Contrato</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="vaga" items="${vagas}" varStatus="id">
+            <tr>
+                <th scope="row"></th>
+                <td>${vaga.id}</td>
+                <td>${vaga.cargo}</td>
+                <td>${vaga.cidade}</td>
+                <td>${vaga.tipoDeContrato}</td>
+            </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+        </tbody>
+    </table>
+    </c:if>
+
     <div class="container">
         <h2>Lista de Vagas</h2>
 
@@ -58,6 +95,11 @@
             <h4>Não há nenhuma vaga publicada no sistema!</h4>
         </c:if>
     </div>
-
+</div>
 </body>
+
+<footer class="footer navbar-fixed-bottom">
+    <c:import url="/WEB-INF/jsp/app/footer.jsp"/>
+</footer>
+
 </html>
