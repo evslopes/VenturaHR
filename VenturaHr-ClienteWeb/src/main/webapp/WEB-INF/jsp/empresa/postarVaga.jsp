@@ -41,7 +41,7 @@
             </form>
 
             <c:if test="${not empty vaga}">
-                <h4 class="text-center" style="color:darkblue">Favor informar os cristérios da vaga</h4>
+                <h4 class="text-center fs-5">Favor informar os detalhes da vaga</h4>
                 <form action="/empresa/criterios" method="post">
                     <div class="form-group">
                         <label>Descrição:</label>
