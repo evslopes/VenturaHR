@@ -31,7 +31,7 @@ public class VagaController {
     public ModelAndView cadastrarVaga(Vaga vaga, HttpServletRequest request) {
         ModelAndView resposta = new ModelAndView("/empresa/postarVaga");
         HttpSession session = request.getSession();
-        ((HttpSession) session).setAttribute("vaga", vaga);
+        session.setAttribute("vaga", vaga);
         return resposta;
     }
 
@@ -49,8 +49,9 @@ public class VagaController {
         return resposta;
     }
 
+    // TODO: 01/04/2022 Refatorar para usar modelView
     @PostMapping(value = "/empresa/anunciarVaga")
-    public String postarVaga(HttpServletRequest request, Model model) {
+    public String publicarVaga(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession();
         Usuario usuario = (Usuario) session.getAttribute("usuario");
         Vaga vaga = (Vaga) session.getAttribute("vaga");

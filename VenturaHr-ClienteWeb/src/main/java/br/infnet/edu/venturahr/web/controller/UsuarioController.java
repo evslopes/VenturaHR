@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class UsuarioController {
 
@@ -19,6 +21,7 @@ public class UsuarioController {
         return "/app/cadastro";
     }
 
+    // TODO: 01/04/2022 Refatorar para trabalhar com modelView
     @PostMapping(value = "/usuario/cadastro")
     public String criarUsuario(Model model, Usuario usuario) {
         usuarioService.criarUsuario(usuario);
@@ -26,7 +29,8 @@ public class UsuarioController {
 
         String inbox = null;
 
-        if (usuario.getTipo() == Usuario.ADMINISTRADOR || usuario.getTipo() == Usuario.CANDIDATO ||
+        if (usuario.getTipo() == Usuario.ADMINISTRADOR ||
+                usuario.getTipo() == Usuario.CANDIDATO ||
                 usuario.getTipo() == Usuario.EMPRESA) {
             inbox = "redirect:/acesso";
         }

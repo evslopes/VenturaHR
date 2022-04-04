@@ -6,15 +6,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @FeignClient(url="http://localhost:8081/usuarios",name="usuarioService")
 public interface UsuarioService {
 
-    @GetMapping(value = "/email/{email}")
-    Usuario buscarPorEmail(@PathVariable("email") String email);
+    @PostMapping
+    Usuario criarUsuario(Usuario usuario);
 
     @GetMapping(value = "id/{id}")
     Usuario buscarPorId(String id);
 
-    @PostMapping
-    Usuario criarUsuario(Usuario usuario);
+    // TODO: 01/04/2022 Verificar assinatura do método
+    @GetMapping(value = "/email/{email}")
+    Usuario buscarPorEmail(@PathVariable("email") String email);
+
 }

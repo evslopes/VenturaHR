@@ -24,7 +24,10 @@ public class Usuario {
     private String razao_social;
     @Column(length = 14)
     private String cnpj;
-    private char tipo;
+    private Character tipo;
+    public static final char ADMINISTRADOR = 'A';
+    public static final char CANDIDATO = 'C';
+    public static final char EMPRESA = 'E';
 
     public Usuario(){
 

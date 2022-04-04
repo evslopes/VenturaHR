@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="VenturaHr-ClienteWeb" />
-        <module name="VenturaHr-Api-Candidato" />
         <module name="VenturaHr-Api-Empresa" />
         <module name="VenturaHr-Api-Usuario" />
       </profile>

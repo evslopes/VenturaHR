@@ -2,7 +2,7 @@ package br.infnet.edu.venturahr.web.domain;
 
 public class Usuario {
     private Integer id;
-    private String nomeCompleto;
+    private String nome;
     private String telefone;
     private String email;
     private String senha;
@@ -25,12 +25,12 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getNomeCompleto() {
-        return nomeCompleto;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeCompleto(String nomeCompleto) {
-        this.nomeCompleto = nomeCompleto;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getTelefone() {
@@ -87,5 +87,19 @@ public class Usuario {
 
     public void setTipo(Character tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nome='" + nome + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                ", razaoSocial='" + razaoSocial + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", cnpj='" + cnpj + '\'' +
+                ", tipo=" + tipo +
+                '}';
     }
 }

@@ -34,6 +34,13 @@ public class VagaController {
         return resposta;
     }
 
+    @GetMapping(path = "/listavagas")
+    public ResponseEntity listaVagas(){
+        List<Vaga> lista = (List<Vaga>) vagaRepository.findAll();
+
+        return ResponseEntity.ok().body(lista);
+    }
+
     @GetMapping(path = "/usuario/{usuarioId}")
     public ResponseEntity listaPorUsuarioId(@PathVariable Integer usuarioId) {
 
@@ -49,6 +56,22 @@ public class VagaController {
 
         try {
             List<Vaga> lista = vagaRepository.findByCargoContainingIgnoreCase(busca);
+            if (!lista.isEmpty()) {
+                resposta = ResponseEntity.ok().body(lista);
+            }
+        } catch (Exception e) {
+        }
+
+        return resposta;
+    }
+
+    @GetMapping(path = "/cidade/{busca}")
+    public ResponseEntity listaPorCidade(@PathVariable String busca) {
+
+        ResponseEntity resposta = ResponseEntity.notFound().build();
+
+        try {
+            List<Vaga> lista = vagaRepository.findByCidadeContainingIgnoreCase(busca);
             if (!lista.isEmpty()) {
                 resposta = ResponseEntity.ok().body(lista);
             }
